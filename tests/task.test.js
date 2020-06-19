@@ -22,7 +22,7 @@ test('Should create task for user', async () => {
 
 test('Should return all tasks for user', async () => {
     const response = await request(app)
-        .post('/tasks')
+        .get('/tasks')
         .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
         .send()
         .expect(200);
